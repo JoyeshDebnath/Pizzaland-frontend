@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-
-
-
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../actions/cartActions";
 const Pizza = ({ pizza }) => {
+	const dispatch = useDispatch();
 	const [quantity, setQuantity] = useState(1);
 	const [varient, setVarient] = useState("small");
 
@@ -12,6 +12,11 @@ const Pizza = ({ pizza }) => {
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+
+	// adding to the cart ...
+	function addtocart() {
+		dispatch(addToCart(pizza, quantity, varient));
+	}
 
 	// foer modal
 	return (
@@ -69,7 +74,9 @@ const Pizza = ({ pizza }) => {
 				</div>
 				<div className="m-1 w-100">
 					{/* add to cart  */}
-					<button className="btn">Add To Cart</button>
+					<button className="btn" onClick={addtocart}>
+						Add To Cart
+					</button>
 				</div>
 			</div>
 
