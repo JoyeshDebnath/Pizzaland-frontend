@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
+
+
+
 const Pizza = ({ pizza }) => {
 	const [quantity, setQuantity] = useState(1);
 	const [varient, setVarient] = useState("small");
