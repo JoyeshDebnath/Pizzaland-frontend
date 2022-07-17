@@ -1,0 +1,40 @@
+.cartHeading {
+	font-size: 3rem !important;
+}
+.plusIcon {
+	color: rgb(47, 255, 50);
+	cursor: pointer;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.minusIcon {
+	color: red;
+	cursor: pointer;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.Quantity_h1 {
+	display: inline;
+}
+
+.cart_image {
+	height: 80px;
+	width: 80px;
+}
+.delete_icon {
+	font-weight: 600;
+	cursor: pointer;
+	margin-top: 10%;
+	color: red;
+	font-size: 2rem;
+
+	transform: translateY(0);
+	transition: transform 150ms, box-shadow 150ms;
+}
+
+.delete_icon:hover {
+	box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+	transform: translateY(-2px);
+}

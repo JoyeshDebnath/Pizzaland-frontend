@@ -3,11 +3,16 @@ import "./App.css";
 import bootstrap from "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import HomeScreen from "./screens/Homescreen";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import CartScreen from "./screens/Cartscreen";
 function App() {
 	return (
 		<div className="App">
 			<Navbar />
-			<HomeScreen />
+			<BrowserRouter>
+				<Route path="/" exact component={HomeScreen} />
+				<Route path="/cart" exact component={CartScreen} />
+			</BrowserRouter>
 		</div>
 	);
 }
