@@ -38,3 +38,11 @@
 	box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
 	transform: translateY(-2px);
 }
+.EmptyCard_div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cardContainer {
+	width: 30rem;
+}
