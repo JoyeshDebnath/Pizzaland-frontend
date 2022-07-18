@@ -4,14 +4,20 @@ import { composeWithDevTools } from "redux-devtools-extension";
 // import reducers
 import { getAllPizzasReducer } from "./reducers/pizzaReducers";
 import { cartReducer } from "./reducers/cartReducer";
+import { userReducer, loginUserReducer } from "./reducers/UserReducer";
 // import reducers
 
 // step1 :combine all reducers into a single combined reducer function
 const finalReducer = combineReducers({
 	getAllPizzasReducer,
 	cartReducer,
+	userReducer, //for rgeister user
+	loginUserReducer,
 });
 
+const currentUser = localStorage.getItem("currentUser")
+	? JSON.parse(localStorage.getItem("currentUser"))
+	: null;
 const cartItems = localStorage.getItem("cartItems")
 	? JSON.parse(localStorage.getItem("cartItems"))
 	: [];
@@ -19,6 +25,9 @@ const cartItems = localStorage.getItem("cartItems")
 // store ie create store take s 3 params 1st .. combinedreducers , 2nd is initialstate  and 3rd is composenehancers which is created with compose with  devtools
 const initialState = {
 	cartReducer: { cartItems: cartItems },
+	loginUserReducer: {
+		currentUser: currentUser,
+	},
 };
 const composeEnhancers = composeWithDevTools({});
 // composeenhancers(applyMiddleWare(thunk))

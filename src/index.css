@@ -40,3 +40,15 @@ select {
 	box-shadow: none !important;
 	border-color: black !important;
 }
+
+.navLogo {
+	height: 50px;
+	width: 60px;
+	border-radius: 30%;
+	margin: 0;
+}
+
+input {
+	margin-top: 10px !important;
+	box-shadow: none !important;
+}

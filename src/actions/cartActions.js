@@ -1,4 +1,5 @@
 // actions for cart
+import { useAlert } from "react-alert";
 
 export const addToCart = (pizza, quantity, varient) => (dispatch, getState) => {
 	var cartItem = {

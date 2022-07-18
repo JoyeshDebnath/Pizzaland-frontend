@@ -8,7 +8,7 @@ const EmptyCart = () => {
 			<Card className="cardContainer shadow-lg p-3 mb-5 bg-white rounded">
 				<Card.Img
 					variant="top"
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdVgVthuk6JYE41ANXAnFN7MZRrFJSziivNQ&usqp=CAU"
+					src="https://media.istockphoto.com/vectors/couch-potato-emoticon-vector-id813141786"
 				/>
 				<Card.Body>
 					<Card.Text>
