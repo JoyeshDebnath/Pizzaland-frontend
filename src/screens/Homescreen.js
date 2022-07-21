@@ -4,7 +4,8 @@ import Pizza from "../components/Pizza";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllPizzas } from "../actions/pizzaActions";
 import ReactLoading from "react-loading";
-
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 const Homescreen = () => {
 	const dispatch = useDispatch();
 	const pizzasState = useSelector((state) => state.getAllPizzasReducer);
@@ -21,25 +22,9 @@ const Homescreen = () => {
 			<div className="row justify-content-center">
 				{loading ? (
 					// <h1>Loading ......</h1>
-					<div
-						style={{
-							display: "flex",
-							height: "100vh",
-							width: "100vw",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					>
-						<ReactLoading
-							type="bars"
-							color="#3a86ff"
-							height={80}
-							width={100}
-							// style={{ position: "absolute", top: "50%" }}
-						/>
-					</div>
+					<Loading />
 				) : error ? (
-					<h1>Something went wrong ....</h1>
+					<Error error="OOPS!! something Went wrong!!" />
 				) : (
 					pizzas.map((pizza) => {
 						return (

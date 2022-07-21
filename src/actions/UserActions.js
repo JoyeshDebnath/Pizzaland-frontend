@@ -39,3 +39,10 @@ export const loginUser = (user) => async (dispatch) => {
 		});
 	}
 };
+
+//logout user from
+export const logoutUser = () => (dispatch) => {
+	localStorage.removeItem("currentUser");
+
+	window.location.href = "/login";
+};

@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { loginUser } from "../actions/UserActions";
 import { useSelector, useDispatch } from "react-redux";
+import { loginUserReducer } from "../reducers/UserReducer";
+import Error from "../components/Error.js";
+import Success from "../components/Success";
+import Loading from "../components/Loading";
 const LoginScreen = () => {
 	const dispatch = useDispatch();
+	const loginState = useSelector((state) => state.loginUserReducer);
+	const { error, loading, success } = loginState;
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -22,7 +28,11 @@ const LoginScreen = () => {
 	return (
 		<div>
 			<div className="row justify-content-center mt-5">
-				<div className="col-md-5 mt-5 text-left">
+				<div className="col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded">
+					{loading && <Loading />}
+					{/* {success && <Success success="User registered SuccessFully!" />} */}
+					{error && <Error error="Invalid credentials !!" />}
+
 					<h2 className="text-center m-3">Login</h2>
 					<div>
 						<input
@@ -45,6 +55,18 @@ const LoginScreen = () => {
 						<button onClick={login} className="btn mt-3">
 							Login
 						</button>
+						<br />
+						<br />
+						<a
+							style={{
+								marginTop: "15px",
+								color: "black",
+								textDecoration: "none",
+							}}
+							href="/register"
+						>
+							Click to register{" "}
+						</a>
 					</div>
 				</div>
 			</div>

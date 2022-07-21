@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../actions/UserActions";
+import Error from "../components/Error.js";
+import Success from "../components/Success";
+import Loading from "../components/Loading";
 
 const RegisterScreen = () => {
 	const dispatch = useDispatch();
@@ -8,6 +11,8 @@ const RegisterScreen = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [cpassword, setcPassword] = useState("");
+	const registerState = useSelector((state) => state.userReducer);
+	const { error, loading, success } = registerState;
 
 	const register = () => {
 		if (password !== cpassword) {
@@ -26,7 +31,11 @@ const RegisterScreen = () => {
 	return (
 		<div>
 			<div className="row justify-content-center mt-5">
-				<div className="col-md-5 mt-5 text-left">
+				<div className="col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded">
+					{loading && <Loading />}
+					{success && <Success success="User registered SuccessFully!" />}
+					{error && <Error error="Email is already registered!!" />}
+
 					<h2 className="text-center m-3">Register</h2>
 					<div>
 						<input
@@ -64,6 +73,18 @@ const RegisterScreen = () => {
 						<button onClick={register} className="btn mt-3">
 							Register
 						</button>
+						<br />
+						<br />
+						<a
+							style={{
+								marginTop: "15px",
+								color: "black",
+								textDecoration: "none",
+							}}
+							href="/login"
+						>
+							Click to Login{" "}
+						</a>
 					</div>
 				</div>
 			</div>
