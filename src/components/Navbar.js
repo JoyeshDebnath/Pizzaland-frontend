@@ -45,6 +45,9 @@ const Navbar = () => {
 										>
 											Logout
 										</Dropdown.Item>
+										<Dropdown.Item href="/profile">
+											About developer
+										</Dropdown.Item>
 									</Dropdown.Menu>
 								</Dropdown>
 							) : (

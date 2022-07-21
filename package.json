@@ -16,6 +16,7 @@
 		"react-icons": "^4.4.0",
 		"react-loading": "^2.0.3",
 		"react-redux": "^8.0.2",
+		"react-responsive-carousel": "^3.2.23",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "5.0.1",
 		"redux": "^4.2.0",

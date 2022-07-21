@@ -5,6 +5,7 @@ import { loginUserReducer } from "../reducers/UserReducer";
 import Error from "../components/Error.js";
 import Success from "../components/Success";
 import Loading from "../components/Loading";
+import { BsFillPeopleFill } from "react-icons/bs";
 const LoginScreen = () => {
 	const dispatch = useDispatch();
 	const loginState = useSelector((state) => state.loginUserReducer);
@@ -33,7 +34,14 @@ const LoginScreen = () => {
 					{/* {success && <Success success="User registered SuccessFully!" />} */}
 					{error && <Error error="Invalid credentials !!" />}
 
-					<h2 className="text-center m-3">Login</h2>
+					<h2 className="text-center m-3">
+						Login
+						{
+							<span className="m-3">
+								<BsFillPeopleFill />
+							</span>
+						}
+					</h2>
 					<div>
 						<input
 							type="text"

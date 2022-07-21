@@ -74,7 +74,7 @@ const Cartscreen = () => {
 										{/* for the pizza image  */}
 										<img
 											className="cart_image"
-											src={item.image}
+											src={item.image[0]}
 											alt="pizza images"
 										/>
 									</div>

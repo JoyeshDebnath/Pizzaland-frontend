@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../actions/cartActions";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import { AiOutlineClose } from "react-icons/ai";
+
+//AiOutlineClose
+
 const Pizza = ({ pizza }) => {
 	const dispatch = useDispatch();
 	const [quantity, setQuantity] = useState(1);
@@ -27,7 +33,7 @@ const Pizza = ({ pizza }) => {
 			<div onClick={handleShow}>
 				<h1>{pizza.name}</h1>
 				<img
-					src={pizza.image}
+					src={pizza.image[0]}
 					className="img-fluid"
 					style={{ height: "200px", width: "200px" }}
 					alt="pizza imahge "
@@ -82,17 +88,33 @@ const Pizza = ({ pizza }) => {
 
 			{/* pizza modal ..... */}
 			<Modal show={show}>
-				<Modal.Header closeButton>
+				<Modal.Header>
 					<Modal.Title>{pizza.name}</Modal.Title>
+					<AiOutlineClose
+						style={{ fontSize: "2rem", fontWeight: "bold", cursor: "pointer" }}
+						onClick={handleClose}
+					/>
 				</Modal.Header>
 
 				<Modal.Body>
-					<img
-						src={pizza.image}
+					{/* <img
+						src={pizza.image[0]}
 						alt="pizza imagse "
 						className="img-fluid"
 						style={{ height: "400px !important" }}
-					/>
+					/> */}
+					<Carousel>
+						{pizza.image.map((pic) => {
+							return (
+								<img
+									src={pic}
+									alt="pizza imagse "
+									className="img-fluid"
+									style={{ height: "400px !important" }}
+								/>
+							);
+						})}
+					</Carousel>
 					<p>{pizza.description}</p>
 				</Modal.Body>
 
