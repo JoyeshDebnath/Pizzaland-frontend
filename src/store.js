@@ -5,6 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { getAllPizzasReducer } from "./reducers/pizzaReducers";
 import { cartReducer } from "./reducers/cartReducer";
 import { userReducer, loginUserReducer } from "./reducers/UserReducer";
+import { placeOrderReducer } from "./reducers/orderReducers";
 // import reducers
 
 // step1 :combine all reducers into a single combined reducer function
@@ -13,6 +14,7 @@ const finalReducer = combineReducers({
 	cartReducer,
 	userReducer, //for rgeister user
 	loginUserReducer,
+	placeOrderReducer,
 });
 
 const currentUser = localStorage.getItem("currentUser")

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { cartReducer } from "../reducers/cartReducer";
 import "./Screen.css";
+import Checkout from "../components/Checkout";
 import EmptyCart from "./EmptyCart";
 import { MdDelete } from "react-icons/md";
 import { FiPlus, FiMinus } from "react-icons/fi";
@@ -112,12 +113,13 @@ const Cartscreen = () => {
 												<span className="ml-auto">{subTotal}</span>{" "}
 											</li>
 										</ul>
-										<a
+										{/* <a
 											className="btn btn-block btn-primary mt-4 mb-3 checkoutBtn"
 											href="checkout.html"
 										>
 											Proceed to Checkout
-										</a>{" "}
+										</a>{" "} */}
+										<Checkout subTotal={subTotal} />
 										<small>Taxes may apply before placing an order.</small>
 									</div>
 								</div>
