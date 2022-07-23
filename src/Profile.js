@@ -1,9 +1,11 @@
 import React from "react";
 import { GoQuote } from "react-icons/go";
-import { BsLinkedin, BsGithub } from "react-icons/bs";
+import { BsLinkedin, BsGithub, BsFacebook } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 import { AiOutlineDownload } from "react-icons/ai";
 // AiOutlineDownload
+import { RiInstagramFill } from "react-icons/ri";
+//BsFacebook
 const Profile = () => {
 	return (
 		<div style={{ maxHeight: "80vh" }}>
@@ -47,10 +49,25 @@ const Profile = () => {
 									</a>
 									<div className="d-flex justify-content-between text-center ProfileIcons ">
 										<a href="https://www.linkedin.com/in/joyesh-debnath-549b3b208/">
-											<BsLinkedin />
+											<BsLinkedin
+												style={{
+													color: "#3a0ca3",
+												}}
+											/>
 										</a>
 										<a href="https://www.instagram.com/joyeshdebnath26/">
-											<SiInstagram style={{ color: "#3f729b " }} />
+											<RiInstagramFill
+												style={{
+													color: "#9a348e",
+												}}
+											/>
+										</a>
+										<a href="https://www.facebook.com/joyesh.debnath.1/">
+											<BsFacebook
+												style={{
+													color: "#27187e",
+												}}
+											/>
 										</a>
 										<a href="https://github.com/JoyeshDebnath">
 											<BsGithub style={{ color: "black" }} />
