@@ -15,7 +15,12 @@ const Navbar = () => {
 				<div className="container-fluid">
 					<a className="navbar-brand" href="/">
 						PizzaLand
-						<img className="navLogo" src="/PizzaLand.png" />
+						<img
+							// className="navLogo"
+							className="rounded-circle ml-2 navLogo img-fluid"
+							//  src="/PizzaLand.png"
+							src="/PizzaLandLogo.gif"
+						/>
 					</a>
 
 					<button

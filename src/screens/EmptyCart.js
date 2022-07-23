@@ -8,6 +8,7 @@ const EmptyCart = () => {
 			<Card className="cardContainer shadow-lg p-3 mb-5 bg-white rounded">
 				<Card.Img
 					variant="top"
+					className="rounded-circle img-fluid"
 					style={{ borderRadius: "30%", border: "none" }}
 					// src="https://media.istockphoto.com/vectors/couch-potato-emoticon-vector-id813141786"
 					src="https://i.gifer.com/26Pf.gif"

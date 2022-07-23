@@ -10,7 +10,7 @@ const Checkout = ({ subTotal }) => {
 	const tokenHandler = (token) => {
 		setPaid(true);
 		console.log(token);
-		dispatch(token, subTotal);
+		dispatch(placeOrder(token, subTotal));
 	};
 
 	const [paid, setPaid] = useState(false);
