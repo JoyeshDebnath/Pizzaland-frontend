@@ -4,7 +4,14 @@ import Confett from "../components/Confett.js";
 import Success from "../components/Success";
 import { useDispatch, useSelector } from "react-redux";
 import { placeOrder } from "../actions/orderActions";
+import Error from "../components/Error.js";
+// import Success from "../components/Success";
+import Loading from "../components/Loading";
+
 const Checkout = ({ subTotal }) => {
+	const orderstate = useSelector((state) => state.placeOrderReducer);
+	const { loading, error, success } = orderstate;
+
 	const dispatch = useDispatch();
 
 	const tokenHandler = (token) => {
@@ -16,6 +23,9 @@ const Checkout = ({ subTotal }) => {
 	const [paid, setPaid] = useState(false);
 	return (
 		<div>
+			{loading && <Loading />}
+			{error && <Error error="Something Went Wrong!!" />}
+
 			{paid ? (
 				<Success success="Payment Done!" />
 			) : (
