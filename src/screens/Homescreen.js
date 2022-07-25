@@ -6,6 +6,8 @@ import { getAllPizzas } from "../actions/pizzaActions";
 import ReactLoading from "react-loading";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import Filter from "../components/Filter";
+
 const Homescreen = () => {
 	const dispatch = useDispatch();
 	const pizzasState = useSelector((state) => state.getAllPizzasReducer);
@@ -19,6 +21,7 @@ const Homescreen = () => {
 
 	return (
 		<div>
+			<Filter />
 			<div className="row justify-content-center">
 				{loading ? (
 					// <h1>Loading ......</h1>
