@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getUserOrders } from "../actions/orderActions";
 import Error from "../components/Error.js";
 import Success from "../components/Success";
+import { Helmet } from "react-helmet";
 import jsPDF from "jspdf";
 import * as htmlToImage from "html-to-image";
 import Loading from "../components/Loading";
@@ -34,6 +35,10 @@ const OrderScreen = () => {
 
 	return (
 		<div>
+			<Helmet>
+				<title>My Orders</title>
+				<meta name="orders" content="Helmet application" />
+			</Helmet>
 			<h2 style={{ fontSize: "35px" }}>
 				My Orders <MdOutlineBorderColor />
 			</h2>

@@ -8,6 +8,7 @@ import { MdDelete } from "react-icons/md";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { addToCart, deleteFromCart } from "../actions/cartActions";
 import Badge from "react-bootstrap/Badge";
+import { Helmet } from "react-helmet";
 //MdDelete
 //FiPlus
 const Cartscreen = () => {
@@ -19,6 +20,10 @@ const Cartscreen = () => {
 	console.log("My cart items ======", cartItems);
 	return (
 		<div>
+			<Helmet>
+				<title>My Cart</title>
+				<meta name="my cart" content="Helmet application" />
+			</Helmet>
 			{cartItems.length === 0 ? (
 				<EmptyCart />
 			) : (

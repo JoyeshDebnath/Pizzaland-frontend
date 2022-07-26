@@ -27,9 +27,9 @@ const Filter = () => {
 						value={category}
 						onChange={(e) => setCategory(e.target.value)}
 					>
-						<option value="all">all 🍕🌶🍽</option>
-						<option value="veg">veg🥦🥑</option>
-						<option value="nonveg">nonveg🍗🥩</option>
+						<option value="all">ALL🍕🍕</option>
+						<option value="veg">VEG🥦</option>
+						<option value="nonveg">NONVEG🍤</option>
 					</select>
 				</div>
 

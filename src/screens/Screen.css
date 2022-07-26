@@ -54,3 +54,30 @@
 	box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
 	transform: translateY(-5px);
 }
+
+.adminfunction {
+	padding: 10px;
+	background-color: rgb(39, 39, 117);
+}
+.adminfunction li {
+	list-style-type: none !important;
+	display: inline !important;
+	color: white !important;
+}
+
+.adminfunction li a {
+	color: white !important;
+	padding: 2rem;
+}
+
+td,
+tr,
+th {
+	text-align: left;
+}
+
+.icn {
+	margin: 1rem;
+	cursor: pointer;
+	font-size: 20px;
+}

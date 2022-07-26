@@ -2,6 +2,8 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../actions/UserActions";
+import Badge from "@mui/material/Badge";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
 	const dispatch = useDispatch();
@@ -65,7 +67,11 @@ const Navbar = () => {
 
 							<li className="nav-item">
 								<a className="nav-link" href="/cart">
-									Cart{cartItems.length}
+									<Badge badgeContent={cartItems.length} color="primary">
+										<FaShoppingCart
+											style={{ color: "#000000", fontSize: "1.5rem" }}
+										/>
+									</Badge>
 								</a>
 							</li>
 						</ul>
