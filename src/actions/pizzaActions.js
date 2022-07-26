@@ -56,3 +56,23 @@ export const filterPizzas = (searchKey, category) => async (dispatch) => {
 		});
 	}
 };
+
+// adding pizzas pizzas actions
+export const addPizza = (pizza) => async (dispatch) => {
+	dispatch({
+		type: "ADD_PIZZA_REQUEST",
+	});
+
+	try {
+		const response = await axios.post("/api/pizzas/addpizza", { pizza });
+		console.log("ADD pizza response ", response.data);
+		dispatch({
+			type: "ADD_PIZZA_SUCCESS",
+		});
+	} catch (error) {
+		dispatch({
+			type: "ADD_PIZZA_FAILED",
+			payload: error,
+		});
+	}
+};
