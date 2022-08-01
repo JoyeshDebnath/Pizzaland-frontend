@@ -4,6 +4,7 @@ import { getAllPizzas } from "../actions/pizzaActions";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import Filter from "../components/Filter";
+import { Link } from "react-router-dom";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import "./Screen.css";
 const PizzasList = () => {
@@ -45,7 +46,9 @@ const PizzasList = () => {
 									</td>
 									<td>{pizza.category}</td>
 									<td>
-										<AiFillEdit className="icn " />
+										<Link to={`/admin/editpizza/${pizza._id}`}>
+											<AiFillEdit className="icn " />
+										</Link>
 										<AiFillDelete className="icn text-danger" />
 									</td>
 								</tr>

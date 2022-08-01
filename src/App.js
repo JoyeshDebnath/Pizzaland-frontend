@@ -10,6 +10,7 @@ import LoginScreen from "./screens/LoginScreen";
 import Profile from "./Profile";
 import OrderScreen from "./screens/OrderScreen";
 import AdminScreen from "./screens/AdminScreen";
+
 function App() {
 	return (
 		<div className="App">

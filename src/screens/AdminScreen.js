@@ -6,6 +6,8 @@ import UsersList from "./UsersList";
 import OrdersList from "./OrdersList";
 import PizzasList from "./PizzasList";
 import AddPizza from "./AddPizza";
+import EditPizza from "./EditPizza";
+
 const AdminScreen = () => {
 	const dispatch = useDispatch();
 	const userState = useSelector((state) => state.loginUserReducer);
@@ -20,7 +22,7 @@ const AdminScreen = () => {
 		<div>
 			<div className="row justify-content-center">
 				<div className="col-md-10">
-					<h2 style={{ fontSize: "35px" }}>Order Screen</h2>
+					<h2 style={{ fontSize: "35px" }}>ADMIN PANEL🎯</h2>
 					<ul className="adminfunction">
 						<li>
 							<Link to={"/admin/userslist"}>Users List</Link>
@@ -42,6 +44,11 @@ const AdminScreen = () => {
 						<Route path="/admin/orderslist" component={OrdersList} exact />
 						<Route path="/admin/pizzaslist" component={PizzasList} exact />
 						<Route path="/admin/addpizza" component={AddPizza} exact />
+						<Route
+							path="/admin/editpizza/:pizzaid"
+							component={EditPizza}
+							exact
+						/>
 					</Switch>
 				</div>
 			</div>
