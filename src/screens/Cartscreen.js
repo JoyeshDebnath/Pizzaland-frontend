@@ -11,7 +11,10 @@ import Badge from "react-bootstrap/Badge";
 import { Helmet } from "react-helmet";
 //MdDelete
 //FiPlus
+import Aos from "aos";
+import "aos/dist/aos.css";
 const Cartscreen = () => {
+	Aos.init();
 	const dispatch = useDispatch();
 	const cartState = useSelector((state) => state.cartReducer);
 	const { cartItems } = cartState;
@@ -27,7 +30,11 @@ const Cartscreen = () => {
 			{cartItems.length === 0 ? (
 				<EmptyCart />
 			) : (
-				<div className="row justify-content-center">
+				<div
+					className="row justify-content-center p-2"
+					data-aos="zoom-out-up"
+					data-aos-duration="2000"
+				>
 					<div className="col-md-6">
 						<h1 className="cartHeading">My Cart</h1>
 						<Badge

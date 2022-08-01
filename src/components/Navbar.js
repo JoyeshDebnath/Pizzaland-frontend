@@ -1,10 +1,11 @@
 import React from "react";
+import "../index.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../actions/UserActions";
 import Badge from "@mui/material/Badge";
 import { FaShoppingCart } from "react-icons/fa";
-
+import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
 	const dispatch = useDispatch();
 	const cartState = useSelector((state) => state.cartReducer);
@@ -13,7 +14,7 @@ const Navbar = () => {
 	const { cartItems } = cartState;
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg  shadow-lg p-3 mb-5 bg-white rounded">
+			<nav className="navbar navbar-expand-sm shadow-lg p-3 mb-5 bg-white rounded ">
 				<div className="container-fluid">
 					<a className="navbar-brand" href="/">
 						PizzaLand
@@ -25,7 +26,7 @@ const Navbar = () => {
 						/>
 					</a>
 
-					<button
+					{/* <button
 						classNameName="navbar-toggler"
 						type="button"
 						data-bs-toggle="collapse"
@@ -33,10 +34,12 @@ const Navbar = () => {
 						aria-controls="navbarNav"
 						aria-expanded="false"
 						aria-label="Toggle navigation"
-					>
-						<span className="navbar-toggler-icon"></span>
-					</button>
-					<div className="collapse navbar-collapse" id="navbarNav">
+					> */}
+					{/* <span className="navbar-toggler-icon"> */}
+					{/* <GiHamburgerMenu style={{ color: "black" }} /> */}
+					{/* </span> */}
+					{/* </button> */}
+					<div className="d-flex flex-column" id="navbarNav">
 						<ul className="navbar-nav ml-auto">
 							{currentUser ? (
 								<Dropdown className="mt-1">

@@ -58,10 +58,8 @@ const EditPizza = ({ match }) => {
 
 	return (
 		<div>
-			<h1>Edit Pizza🍕🍕</h1>
-			<h1>Pizza Id : {match.params.pizzaid}</h1>
-			<div className="text-left">
-				<h1>Edit Pizza</h1>
+			<div className="text-left shadow-lg p-3 mb-5 bg-white rounded">
+				<h1>Edit Pizza🍕🍕</h1>
 				{loading && <Loading />}
 				{error && <Error error="Something Went Wrong !!" />}
 				{editsuccess && (

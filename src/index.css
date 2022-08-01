@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Montserrat+Alternates:wght@300&family=Montserrat:wght@600&display=swap");
 
-body {
+body,
+html {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
 		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -8,6 +9,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: "Montserrat", sans-serif !important;
+	overflow-x: hidden;
 }
 
 code {
@@ -51,4 +53,11 @@ select {
 input {
 	margin-top: 10px !important;
 	box-shadow: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+	.res {
+		display: flex !important;
+		flex-direction: column !important;
+	}
 }

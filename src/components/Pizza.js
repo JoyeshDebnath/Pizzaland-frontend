@@ -5,10 +5,12 @@ import { addToCart } from "../actions/cartActions";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { AiOutlineClose } from "react-icons/ai";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 //AiOutlineClose
 
 const Pizza = ({ pizza }) => {
+	Aos.init();
 	const dispatch = useDispatch();
 	const [quantity, setQuantity] = useState(1);
 	const [varient, setVarient] = useState("small");
@@ -28,6 +30,9 @@ const Pizza = ({ pizza }) => {
 	return (
 		<div
 			// style={{ margin: "70px" }}
+			data-aos="flip-left"
+			data-aos-easing="ease-out-cubic"
+			data-aos-duration="2000"
 			className="shadow-lg p-3 mb-5 bg-white rounded"
 		>
 			<div onClick={handleShow}>

@@ -36,7 +36,7 @@ const AddPizza = () => {
 
 	return (
 		<div>
-			<div className="text-left">
+			<div className="text-left shadow-lg p-3 mb-5 bg-white rounded">
 				<h1>Add Pizza</h1>
 				{loading && <Loading />}
 				{error && <Error error="Something Went Wrong !!" />}
