@@ -118,3 +118,16 @@ export const editPizza = (editedpizza) => async (dispatch) => {
 		});
 	}
 };
+
+//deleting a pizza ..
+
+export const deletePizza = (pizzaid) => async (dispatch) => {
+	try {
+		const response = await axios.post("/api/pizzas/deletepizza", { pizzaid });
+		alert(`Pizza with ID ${pizzaid} was successfully deleted!`);
+		console.log(response);
+		window.location.reload();
+	} catch (err) {
+		alert("Something Went Wrong!");
+	}
+};

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllPizzas } from "../actions/pizzaActions";
+import { getAllPizzas, deletePizza } from "../actions/pizzaActions";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import Filter from "../components/Filter";
@@ -49,7 +49,10 @@ const PizzasList = () => {
 										<Link to={`/admin/editpizza/${pizza._id}`}>
 											<AiFillEdit className="icn " />
 										</Link>
-										<AiFillDelete className="icn text-danger" />
+										<AiFillDelete
+											className="icn text-danger"
+											onClick={() => dispatch(deletePizza(pizza._id))}
+										/>
 									</td>
 								</tr>
 							);
