@@ -63,3 +63,16 @@ export const getAllOrders = () => async (dispatch, getState) => {
 		});
 	}
 };
+
+export const deliverOrder = (orderid) => async (dispatch) => {
+	try {
+		const response = await axios.post("/api/orders/deliverorder", {
+			orderid: orderid,
+		});
+		alert(`Ordr ${orderid} has been delivered!`);
+		const orders = await axios.get("/api/orders/getallorders");
+		dispatch({ type: "GET_ALL_ORDERS_SUCCESS", payload: orders.data });
+	} catch (err) {
+		return alert("Something Went Wrong!");
+	}
+};

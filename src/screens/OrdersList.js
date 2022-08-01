@@ -3,7 +3,7 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 import Success from "../components/Success";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllOrders } from "../actions/orderActions";
+import { getAllOrders, deliverOrder } from "../actions/orderActions";
 const OrdersList = () => {
 	const dispatch = useDispatch();
 	const allordersstate = useSelector((state) => state.getAllOrdersReducer);
@@ -42,9 +42,16 @@ const OrdersList = () => {
 									<td>{order.createdAt.substring(0, 10)}</td>
 									<td>
 										{order.isDelivered ? (
-											<h1>Delivered</h1>
+											<h1 className="text-success">Delivered</h1>
 										) : (
-											<button className="btn">Deliver</button>
+											<button
+												className="btn"
+												onClick={() => {
+													dispatch(deliverOrder(order._id));
+												}}
+											>
+												Deliver
+											</button>
 										)}
 									</td>
 								</tr>
