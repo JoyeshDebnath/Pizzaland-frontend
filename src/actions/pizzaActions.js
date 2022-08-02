@@ -8,7 +8,9 @@ export const getAllPizzas = () => async (dispatch) => {
 	});
 
 	try {
-		const response = await axios.get("/api/pizzas/getallpizzas");
+		const response = await axios.get(
+			"https://pizzaland26.herokuapp.com/api/pizzas/getallpizzas"
+		);
 		console.log("response =", response);
 		dispatch({
 			type: "GET_PIZZAS_SUCCESS",
@@ -32,7 +34,9 @@ export const filterPizzas = (searchKey, category) => async (dispatch) => {
 	});
 
 	try {
-		const response = await axios.get("/api/pizzas/getallpizzas");
+		const response = await axios.get(
+			"https://pizzaland26.herokuapp.com/api/pizzas/getallpizzas"
+		);
 		// console.log("response =", response);
 		// filtering by serach key .....
 		filteredPizzas = response.data.filter((pizza) => {
@@ -64,7 +68,10 @@ export const addPizza = (pizza) => async (dispatch) => {
 	});
 
 	try {
-		const response = await axios.post("/api/pizzas/addpizza", { pizza });
+		const response = await axios.post(
+			"https://pizzaland26.herokuapp.com/api/pizzas/addpizza",
+			{ pizza }
+		);
 		console.log("ADD pizza response ", response.data);
 		dispatch({
 			type: "ADD_PIZZA_SUCCESS",
@@ -84,7 +91,10 @@ export const getPizzaById = (pizzaid) => async (dispatch) => {
 	});
 
 	try {
-		const response = await axios.post("/api/pizzas/getpizzabyid", { pizzaid });
+		const response = await axios.post(
+			"https://pizzaland26.herokuapp.com/api/pizzas/getpizzabyid",
+			{ pizzaid }
+		);
 		console.log("response =", response);
 		dispatch({
 			type: "GET_PIZZABYID_SUCCESS",
@@ -105,7 +115,10 @@ export const editPizza = (editedpizza) => async (dispatch) => {
 	});
 
 	try {
-		const response = await axios.post("/api/pizzas/editpizza", { editedpizza });
+		const response = await axios.post(
+			"https://pizzaland26.herokuapp.com/api/pizzas/editpizza",
+			{ editedpizza }
+		);
 		console.log("EDIT pizza response ", response.data);
 		dispatch({
 			type: "EDIT_PIZZA_SUCCESS",
@@ -123,7 +136,10 @@ export const editPizza = (editedpizza) => async (dispatch) => {
 
 export const deletePizza = (pizzaid) => async (dispatch) => {
 	try {
-		const response = await axios.post("/api/pizzas/deletepizza", { pizzaid });
+		const response = await axios.post(
+			"https://pizzaland26.herokuapp.com/api/pizzas/deletepizza",
+			{ pizzaid }
+		);
 		alert(`Pizza with ID ${pizzaid} was successfully deleted!`);
 		console.log(response);
 		window.location.reload();
