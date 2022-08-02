@@ -8,10 +8,7 @@ export const registerUser = (user) => async (dispatch) => {
 	});
 
 	try {
-		const response = await axios.post(
-			`https://pizzaland26.herokuapp.com/api/users/register`,
-			user
-		);
+		const response = await axios.post(`/api/users/register`, user);
 		console.log("My user,", response);
 		dispatch({ type: "USER_REGISTER_SUCCESS" });
 		window.location.href = "/login";
@@ -31,10 +28,7 @@ export const loginUser = (user) => async (dispatch) => {
 	});
 
 	try {
-		const response = await axios.post(
-			`https://pizzaland26.herokuapp.com/api/users/login`,
-			user
-		);
+		const response = await axios.post(`/api/users/login`, user);
 		console.log("My user,", response);
 		dispatch({ type: "USER_LOGIN_SUCCESS", payload: response.data });
 		localStorage.setItem("currentUser", JSON.stringify(response.data));
@@ -58,9 +52,7 @@ export const getAllUsers = () => async (dispatch) => {
 	dispatch({ type: "GET_USERS_REQUEST" });
 
 	try {
-		const response = await axios.get(
-			"https://pizzaland26.herokuapp.com/api/users/getallusers"
-		);
+		const response = await axios.get("/api/users/getallusers");
 		console.log(response.data);
 		dispatch({ type: "GET_USERS_SUCCESS", payload: response.data });
 	} catch (error) {
@@ -70,9 +62,7 @@ export const getAllUsers = () => async (dispatch) => {
 
 export const deleteUser = (userid) => async (dispatch) => {
 	try {
-		await axios.post("https://pizzaland26.herokuapp.com/api/users/deleteuser", {
-			userid,
-		});
+		await axios.post("/api/users/deleteuser", { userid });
 		alert("User deleted successfully");
 		window.location.reload();
 	} catch (error) {

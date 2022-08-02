@@ -6,15 +6,12 @@ export const placeOrder = (token, subTotal) => async (dispatch, getState) => {
 	dispatch({ type: "PLACE_ORDER_REQUEST" });
 
 	try {
-		const response = await axios.post(
-			"https://pizzaland26.herokuapp.com/api/orders/placeorder",
-			{
-				token,
-				subTotal,
-				currentUser,
-				cartItems,
-			}
-		);
+		const response = await axios.post("/api/orders/placeorder", {
+			token,
+			subTotal,
+			currentUser,
+			cartItems,
+		});
 		dispatch({ type: "PLACE_ORDER_SUCCESS" });
 		console.log("response,", response);
 	} catch (error) {
@@ -30,12 +27,9 @@ export const getUserOrders = () => async (dispatch, getState) => {
 	});
 
 	try {
-		const response = await axios.post(
-			"https://pizzaland26.herokuapp.com/api/orders/getuserorders",
-			{
-				userid: currentUser._id,
-			}
-		);
+		const response = await axios.post("/api/orders/getuserorders", {
+			userid: currentUser._id,
+		});
 		console.log("response =", response);
 		dispatch({
 			type: "GET_USER_ORDERS_SUCCESS",
@@ -56,9 +50,7 @@ export const getAllOrders = () => async (dispatch, getState) => {
 	});
 
 	try {
-		const response = await axios.get(
-			"https://pizzaland26.herokuapp.com/api/orders/getallorders"
-		);
+		const response = await axios.get("/api/orders/getallorders");
 		console.log("response =", response);
 		dispatch({
 			type: "GET_ALL_ORDERS_SUCCESS",
@@ -74,16 +66,11 @@ export const getAllOrders = () => async (dispatch, getState) => {
 
 export const deliverOrder = (orderid) => async (dispatch) => {
 	try {
-		const response = await axios.post(
-			"https://pizzaland26.herokuapp.com/api/orders/deliverorder",
-			{
-				orderid: orderid,
-			}
-		);
+		const response = await axios.post("/api/orders/deliverorder", {
+			orderid: orderid,
+		});
 		alert(`Ordr ${orderid} has been delivered!`);
-		const orders = await axios.get(
-			"https://pizzaland26.herokuapp.com/api/orders/getallorders"
-		);
+		const orders = await axios.get("/api/orders/getallorders");
 		dispatch({ type: "GET_ALL_ORDERS_SUCCESS", payload: orders.data });
 	} catch (err) {
 		return alert("Something Went Wrong!");
