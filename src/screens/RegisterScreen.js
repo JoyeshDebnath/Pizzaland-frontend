@@ -31,7 +31,7 @@ const RegisterScreen = () => {
 	};
 
 	return (
-		<div>
+		<div className="register">
 			<Helmet>
 				<title>Registration Page</title>
 				<meta name="register" content="Helmet application" />

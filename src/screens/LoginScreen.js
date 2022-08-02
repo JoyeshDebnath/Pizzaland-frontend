@@ -28,7 +28,7 @@ const LoginScreen = () => {
 	};
 
 	return (
-		<div>
+		<div className="login">
 			<Helmet>
 				<title>Login Page</title>
 				<meta name="login" content="Helmet application" />
